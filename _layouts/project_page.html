@@ -15,6 +15,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="./static/css/index.css">
 
+  <link rel="icon" type="image/png" sizes="16x16" href="static/image/favicon-16x16.png">
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/index.js"></script>
@@ -47,10 +50,26 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">{{ page.title }}</h1>
+          {% if page.accepted %}
+          <div class="is-size-4 publication-venue">
+            <span class="author-block">
+              {{ page.accepted }}
+            </span>
+          </div>
+          {% endif %}
+
           {% if page.authors %}
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              {{ page.authors }}
+              {% for author in page.authors %}
+              {% if author.link %}
+                <a href="{{ author.link }}">{{ author.name }}</a>
+              {% else %}
+                {{ author.name }}
+              {% endif %}
+              <sup>{{ author.superscript }}</sup>
+        {% unless forloop.last %}, {% endunless %}
+      {% endfor %}
             </span>
           </div>
           {% endif %}
@@ -62,6 +81,8 @@
             </span>
           </div>
           {% endif %}
+
+          
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -113,6 +134,19 @@
                 </a>
               </span>
               {% endif %}
+              <!-- Powerpoint Link. -->
+              {% if page.slide %}
+              <span class="link-block">
+                <a href="{{ page.slide }}"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-powerpoint"></i>
+                  </span>
+                  <span>Slide</span>
+                </a>
+              </span>
+              {% endif %} 
+              
             </div>
           </div>
         </div>
@@ -136,7 +170,7 @@
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-          <p>
+          <p style="text-align: center;">
             Website template borrowed from <a
             href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>. 
           </p>

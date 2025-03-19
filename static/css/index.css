@@ -17,19 +17,22 @@ body {
   font-variant: small-caps;
 }
 
+.section {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
 
 .teaser .hero-body {
   padding-top: 0;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
 }
 
 .teaser {
   font-family: 'Google Sans', sans-serif;
 }
 
-
-.publication-title {
-}
 
 .publication-banner {
   max-height: parent;
@@ -44,9 +47,6 @@ body {
   object-fit: fit;
 }
 
-.publication-header .hero-body {
-}
-
 .publication-title {
     font-family: 'Google Sans', sans-serif;
 }
@@ -56,8 +56,7 @@ body {
 }
 
 .publication-venue {
-    color: #555;
-    width: fit-content;
+    color: #fc9207fd;
     font-weight: bold;
 }
 
