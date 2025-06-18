@@ -37,7 +37,7 @@ accepted:
     The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2025
 paper: https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf
 # video: https://www.youtube.com/results?search_query=turing+machine
-code: https://github.com/yinwen2019/UCDVER
+code: https://github.com/yinwen2019/KCDP
 # data: https://huggingface.co/docs/datasets
 slide: https://yinwen2019.github.io/ucdver/assets/slide.pptx
 ---
